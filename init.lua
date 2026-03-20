@@ -13,8 +13,8 @@ require("config.nvim-tree")
 require("config.harpoon")
 
 --indenting
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 
 --visual
 vim.opt.scrolloff = 8
@@ -31,7 +31,8 @@ vim.opt.guicursor = "n-v-c-i:block"
 vim.opt.cursorline = false
 
 --bindings
-vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "save buffer changes" })
+vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save buffer changes" })
+vim.keymap.set("n", "<leader>se", ":noh<CR>", { desc = "Stop searching pattern" })
 
 --theme
 vim.g.nord_contrast = false 
@@ -45,6 +46,7 @@ vim.g.nord_bold = true
 require('nord').set()
 if vim.g.nord_disable_background
 	then vim.cmd("highlight FloatBorder guibg=NONE")
+			vim.cmd("highlight NvimTreeNormalFloat guibg=NONE")
 	end
 
 --lsp
